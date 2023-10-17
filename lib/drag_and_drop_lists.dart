@@ -14,26 +14,22 @@ library drag_and_drop_lists;
 
 import 'dart:math';
 
-import 'package:drag_and_drop_lists/drag_and_drop_builder_parameters.dart';
-import 'package:drag_and_drop_lists/drag_and_drop_item.dart';
-import 'package:drag_and_drop_lists/drag_and_drop_item_target.dart';
-import 'package:drag_and_drop_lists/drag_and_drop_list_interface.dart';
-import 'package:drag_and_drop_lists/drag_and_drop_list_target.dart';
-import 'package:drag_and_drop_lists/drag_and_drop_list_wrapper.dart';
-import 'package:drag_and_drop_lists/drag_handle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
-export 'package:drag_and_drop_lists/drag_and_drop_builder_parameters.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_item.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_item_target.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_item_wrapper.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_list.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_list_expansion.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_list_target.dart';
-export 'package:drag_and_drop_lists/drag_and_drop_list_wrapper.dart';
-export 'package:drag_and_drop_lists/drag_handle.dart';
+import 'drag_and_drop_list_interface.dart';
+import 'drag_and_drop_lists.dart';
+
+export 'drag_and_drop_builder_parameters.dart';
+export 'drag_and_drop_item.dart';
+export 'drag_and_drop_item_target.dart';
+export 'drag_and_drop_item_wrapper.dart';
+export 'drag_and_drop_list.dart';
+export 'drag_and_drop_list_expansion.dart';
+export 'drag_and_drop_list_target.dart';
+export 'drag_and_drop_list_wrapper.dart';
+export 'drag_handle.dart';
 
 typedef void OnItemReorder(
   int oldItemIndex,
@@ -47,7 +43,7 @@ typedef void OnItemAdd(
   int newItemIndex,
 );
 typedef void OnListAdd(DragAndDropListInterface newList, int newListIndex);
-typedef void OnListReorder(int oldListIndex, int newListIndex);
+//typedef void OnListReorder(int oldListIndex, int newListIndex);
 typedef void OnListDraggingChanged(
   DragAndDropListInterface? list,
   bool dragging,
@@ -98,7 +94,7 @@ class DragAndDropLists extends StatefulWidget {
   /// Calls this function when a list is reordered.
   /// Takes into account the index change when removing a list, so the
   /// [newListIndex] can be used directly when inserting.
-  final OnListReorder onListReorder;
+  //final OnListReorder onListReorder;
 
   /// Calls this function when a new item has been added.
   final OnItemAdd? onItemAdd;
@@ -279,7 +275,7 @@ class DragAndDropLists extends StatefulWidget {
   /// the vertical axis. By default this is set to true. This may be useful to
   /// disable when setting customDragTargets
   final bool constrainDraggingAxis;
-  
+
   /// If you put a widget before DragAndDropLists there's an unexpected padding
   /// before the list renders. This is the default behaviour for ListView which
   /// is used internally. To remove the padding, set this field to true
@@ -289,7 +285,7 @@ class DragAndDropLists extends StatefulWidget {
   DragAndDropLists({
     required this.children,
     required this.onItemReorder,
-    required this.onListReorder,
+    //required this.onListReorder,
     this.onItemAdd,
     this.onListAdd,
     this.onListDraggingChanged,
@@ -606,7 +602,7 @@ class DragAndDropListsState extends State<DragAndDropLists> {
         // same list, so if the new position is after the old position, the removal of the old item must be taken into account
         newListIndex--;
       }
-      widget.onListReorder(reorderedListIndex, newListIndex);
+      //widget.onListReorder(reorderedListIndex, newListIndex);
     }
   }
 
@@ -665,12 +661,12 @@ class DragAndDropListsState extends State<DragAndDropLists> {
     if (widget.listOnAccept != null)
       widget.listTargetOnAccept!(newOrReordered, receiver);
 
-    if (reorderedListIndex >= 0) {
-      widget.onListReorder(reorderedListIndex, widget.children.length - 1);
-    } else {
-      if (widget.onListAdd != null)
-        widget.onListAdd!(newOrReordered, reorderedListIndex);
-    }
+    //if (reorderedListIndex >= 0) {
+//      widget.onListReorder(reorderedListIndex, widget.children.length - 1);
+//    } else {
+//      if (widget.onListAdd != null)
+//        widget.onListAdd!(newOrReordered, reorderedListIndex);
+//    }
   }
 
   _onPointerMove(PointerMoveEvent event) {

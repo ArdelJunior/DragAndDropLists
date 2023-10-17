@@ -1,8 +1,8 @@
-import 'package:drag_and_drop_lists/drag_and_drop_builder_parameters.dart';
-import 'package:drag_and_drop_lists/drag_and_drop_list_interface.dart';
-import 'package:drag_and_drop_lists/drag_handle.dart';
-import 'package:drag_and_drop_lists/measure_size.dart';
 import 'package:flutter/material.dart';
+
+import 'drag_and_drop_list_interface.dart';
+import 'drag_and_drop_lists.dart';
+import 'measure_size.dart';
 
 class DragAndDropListWrapper extends StatefulWidget {
   final DragAndDropListInterface dragAndDropList;
@@ -35,7 +35,7 @@ class _DragAndDropListWrapper extends State<DragAndDropListWrapper>
         widget.dragAndDropList.generateWidget(widget.parameters);
 
     Widget draggable;
-    if (widget.dragAndDropList.canDrag) {
+    if (false) {
       if (widget.parameters.listDragHandle != null) {
         Widget dragHandle = MouseRegion(
           cursor: SystemMouseCursors.grab,
