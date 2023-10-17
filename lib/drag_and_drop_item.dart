@@ -13,8 +13,11 @@ class DragAndDropItem implements DragAndDropInterface {
   /// Set to false if it must remain fixed.
   final bool canDrag;
 
+  final String subcategoryId;
+
   DragAndDropItem({
     required this.child,
+    required this.subcategoryId,
     this.feedbackWidget,
     this.canDrag = true,
   });
