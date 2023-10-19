@@ -48,6 +48,8 @@ class DragAndDropList implements DragAndDropListInterface {
   /// Set to false if it must remain fixed.
   final bool canDrag;
 
+  final String scheduleId;
+
   DragAndDropList({
     required this.children,
     this.header,
@@ -60,6 +62,7 @@ class DragAndDropList implements DragAndDropListInterface {
     this.horizontalAlignment = MainAxisAlignment.start,
     this.verticalAlignment = CrossAxisAlignment.start,
     this.canDrag = true,
+    required this.scheduleId,
   });
 
   @override
