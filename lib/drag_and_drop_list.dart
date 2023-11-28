@@ -50,6 +50,8 @@ class DragAndDropList implements DragAndDropListInterface {
 
   final String scheduleId;
 
+  final String favoriteSubcategoryId;
+
   DragAndDropList({
     required this.children,
     this.header,
@@ -63,6 +65,7 @@ class DragAndDropList implements DragAndDropListInterface {
     this.verticalAlignment = CrossAxisAlignment.start,
     this.canDrag = true,
     required this.scheduleId,
+    required this.favoriteSubcategoryId,
   });
 
   @override
