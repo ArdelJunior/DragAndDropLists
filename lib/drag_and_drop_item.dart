@@ -15,9 +15,12 @@ class DragAndDropItem implements DragAndDropInterface {
 
   final String subcategoryId;
 
+  final String favoriteSubcategoryId;
+
   DragAndDropItem({
     required this.child,
     required this.subcategoryId,
+    required this.favoriteSubcategoryId,
     this.feedbackWidget,
     this.canDrag = true,
   });
