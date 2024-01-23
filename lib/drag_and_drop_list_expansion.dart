@@ -150,7 +150,7 @@ class DragAndDropListExpansion implements DragAndDropListExpansionInterface {
       contents.add(
         contentsWhenEmpty ??
             Text(
-              'Empty list',
+              'No activities',
               style: TextStyle(
                 fontStyle: FontStyle.italic,
               ),

@@ -85,7 +85,8 @@ class _ListTileExample extends State<ListTileExample> {
           padding: const EdgeInsets.symmetric(vertical: 30.0),
           child: Center(
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 100.0),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 40.0, horizontal: 100.0),
               decoration: BoxDecoration(
                 border: Border.all(),
                 borderRadius: BorderRadius.circular(7.0),
@@ -104,7 +105,7 @@ class _ListTileExample extends State<ListTileExample> {
               ),
             ),
             Text(
-              'Empty List',
+              'No activities',
               style: TextStyle(
                   color: Theme.of(context).textTheme.caption!.color,
                   fontStyle: FontStyle.italic),

@@ -163,7 +163,7 @@ class DragAndDropList implements DragAndDropListInterface {
               children: <Widget>[
                 contentsWhenEmpty ??
                     Text(
-                      'Empty list',
+                      'No activities',
                       style: TextStyle(
                         fontStyle: FontStyle.italic,
                       ),
