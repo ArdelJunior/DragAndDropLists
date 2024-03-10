@@ -125,6 +125,7 @@ class DragAndDropList implements DragAndDropListInterface {
       }
       for (int i = 0; i < children.length; i++) {
         allChildren.add(DragAndDropItemWrapper(
+          //testing change
           child: children[i],
           parameters: parameters,
         ));
